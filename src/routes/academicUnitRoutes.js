@@ -19,7 +19,8 @@ router.use(
     "super_admin",
     "admin",
     "principal",
-    "head_teacher"
+    "head_teacher",
+    "teacher"
   )
 );
 
