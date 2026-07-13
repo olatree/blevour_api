@@ -36,7 +36,7 @@ const { protect, restrictToRoles } = require("../middleware/authMiddleware");
 router.post(
   "/class-teacher",
   protect,
-  restrictToRoles("class_teacher", "teacher", "head_teacher", "admin", "super_admin", "master_admin"),
+  restrictToRoles("class_teacher", "teacher", "head_teacher", "admin", "super_admin", "master_admin", "util_admin"),
   saveClassTeacherComments
 );
 
@@ -44,14 +44,14 @@ router.post(
 router.post(
   "/principal",
   protect,
-  restrictToRoles("principal", "admin", "super_admin", "master_admin"),
+  restrictToRoles("principal", "admin", "super_admin", "master_admin", "util_admin"),
   savePrincipalComments
 );
 
 router.post(
   "/head-teacher",
   protect,
-  restrictToRoles("head_teacher", "admin", "super_admin", "master_admin"),
+  restrictToRoles("head_teacher", "admin", "super_admin", "master_admin", "util_admin"),
   saveHeadTeacherComments
 );
 
@@ -59,7 +59,7 @@ router.post(
 router.get(
   "/",
   protect,
-  restrictToRoles("teacher", "head_teacher", "class_teacher", "principal", "admin", "super_admin", "master_admin"),
+  restrictToRoles("teacher", "head_teacher", "class_teacher", "principal", "admin", "super_admin", "master_admin", "util_admin"),
   getTermReports
 );
 
@@ -67,7 +67,7 @@ router.get(
 router.get(
   "/:enrollmentId",
   protect,
-  restrictToRoles("teacher", "head_teacher", "class_teacher", "principal", "admin", "super_admin", "master_admin"),
+  restrictToRoles("teacher", "head_teacher", "class_teacher", "principal", "admin", "super_admin", "master_admin", "util_admin"),
   getStudentReport
 );
 
