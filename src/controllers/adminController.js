@@ -156,7 +156,7 @@ const bcrypt = require("bcryptjs");
 const asyncHandler = require("../middleware/asyncHandler");
 const User = require("../models/User");
 
-const allowedAdminRoles = ["admin", "super_admin"];
+const allowedAdminRoles = ["admin", "super_admin", "util_admin"];
 
 const sanitizeUser = (user) => ({
   _id: user._id,

@@ -9,6 +9,7 @@ const roles = [
   "head_teacher",
   "principal",
   "admin",
+  "util_admin",
   "super_admin",
   "master_admin",
 ];
