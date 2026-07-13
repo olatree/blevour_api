@@ -42,13 +42,13 @@ router.use(protect);
 
 router.get(
   "/",
-  restrictToRoles("admin", "super_admin", "master_admin", "principal", "head_teacher", "teacher"),
+  restrictToRoles("admin", "super_admin", "master_admin", "principal", "head_teacher", "teacher", "util_admin"),
   getLessons
 );
 
 router.post(
   "/",
-  restrictToRoles("admin", "super_admin", "master_admin", "principal", "head_teacher", "teacher"),
+  restrictToRoles("admin", "super_admin", "master_admin", "principal", "head_teacher", "teacher", "util_admin"),
   upload.array("files", 10),
   createLesson
 );
@@ -61,13 +61,13 @@ router.get(
 
 router.put(
   "/:id",
-  restrictToRoles("admin", "super_admin", "master_admin", "principal", "head_teacher", "teacher"),
+  restrictToRoles("admin", "super_admin", "master_admin", "principal", "head_teacher", "teacher", "util_admin"),
   updateLesson
 );
 
 router.patch(
   "/:id/status",
-  restrictToRoles("admin", "super_admin", "master_admin", "principal", "head_teacher", "teacher"),
+  restrictToRoles("admin", "super_admin", "master_admin", "principal", "head_teacher", "teacher", "util_admin"),
   updateLessonStatus
 );
 
@@ -80,13 +80,13 @@ router.post(
 
 router.delete(
   "/:lessonId/resources/:resourceId",
-  restrictToRoles("admin", "super_admin", "master_admin", "principal", "head_teacher", "teacher"),
+  restrictToRoles("admin", "super_admin", "master_admin", "principal", "head_teacher", "teacher", "util_admin"),
   removeLessonResource
 );
 
 router.delete(
   "/:id",
-  restrictToRoles("admin", "super_admin", "master_admin", "principal", "head_teacher", "teacher"),
+  restrictToRoles("admin", "super_admin", "master_admin", "principal", "head_teacher", "teacher", "util_admin"),
   deleteLesson
 );
 

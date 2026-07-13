@@ -52,7 +52,8 @@ router.use(
     "principal",
     "head_teacher",
     "teacher",
-    "master_admin"
+    "master_admin",
+    "util_admin"
   )
 );
 
