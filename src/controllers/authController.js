@@ -125,7 +125,7 @@ const sanitizeUser = (user) => ({
   isBlocked: user.isBlocked,
   isClassTeacher: user.isClassTeacher || false,
   classTeacherOf: user.classTeacherOf || null,
-
+  academicUnit: user.academicUnit || null,
 });
 
 // const createSessionAndSetCookies = async (req, res, user) => {
