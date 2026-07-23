@@ -25,11 +25,11 @@ const {
   editPromotionAudit,
   getPromotionBatches,
   getPromotionBatchDetail,
-} = require("../controllers/promotionController");
+} = require("../controllers/PromotionController");
 
 // adjust to your existing auth middleware name/path
 // const { protect, authorize } = require("../middleware/authMiddleware");
-const { protect, restrictToRoles } = require("../middleware/authMiddleware");
+const { protect, restrictToRoles } = require("../");
 
 router.post(
   "/",
