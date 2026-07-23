@@ -28,8 +28,9 @@ const {
 } = require("../controllers/PromotionController");
 
 // adjust to your existing auth middleware name/path
+// I don tire ooo
 // const { protect, authorize } = require("../middleware/authMiddleware");
-const { protect, restrictToRoles } = require("../");
+const { protect, restrictToRoles } = require("../middleware/authMiddleware");
 
 router.post(
   "/",
