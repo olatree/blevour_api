@@ -278,7 +278,10 @@ exports.getStudentTermResults = async (req, res) => {
     const enrollment = await Enrollment.findOne({
       studentId: req.student._id,
       sessionId,
-    }).select("_id academicUnitId studentId classId armId sessionId");
+    }).select("_id academicUnitId studentId classId armId sessionId")
+      .populate("classId", "name")
+      .populate("armId", "name")
+      .populate("academicUnitId", "name");
 
     if (!enrollment) {
       return res.status(404).json({
@@ -332,6 +335,9 @@ exports.getStudentTermResults = async (req, res) => {
       success: true,
       results: termResults,
       termAverage,
+      classId: enrollment.classId,   // { _id, name } for the SELECTED session
+      armId: enrollment.armId,       // { _id, name } for the SELECTED session
+      academicUnitId: enrollment.academicUnitId, // NEW
       comments: {
         classTeacher: report?.classTeacherComment || "",
         principal: report?.principalComment || "",

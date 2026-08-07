@@ -888,6 +888,8 @@ exports.getStudents = asyncHandler(async (req, res) => {
     studentMatch.archived = { $ne: true };
   } else if (studentStatus === "archived") {
     studentMatch.archived = true;
+  } else if (studentStatus === "all") {
+    // No additional filtering needed
   } else {
     studentMatch.archived = { $ne: true };
     studentMatch.status = { $ne: "graduated" };
